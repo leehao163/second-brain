@@ -58,25 +58,21 @@ status: planning
 - [ ] 文件列表组件
 - [ ] 搜索组件
 
-### Phase 3: 数据层 (2-3小时)
-- [ ] 文件系统访问 (fs/promises)
-- [ ] 文件扫描和缓存
-- [ ] Frontmatter 解析
-- [ ] 分类和标签管理
+### Phase 3: 高级功能 (3-4小时)
+- [x] WikiLink 反向链接页面 - 显示引用该文档的所有文档
+- [x] WikiLink 未找到处理 - 创建占位页面或重定向策略
+- [x] 引用关系图 - 使用 mermaid.js 展示文档链接网络
+- [x] 每日日志系统 - 自动生成、展示和链接日志条目
+- [x] 文档关系 API - GET /api/backlinks/[slug], GET /api/graph-data
+- **Status:** complete
 
-### Phase 4: 高级功能 (3-4小时)
-- [ ] WikiLink 解析和转换
-- [ ] 引用关系图 (使用 mermaid 或 d3)
-- [ ] 搜索索引
-- [ ] 每日日志自动生成
-
-### Phase 5: 主题和优化 (2-3小时)
+### Phase 4: 主题和优化 (2-3小时)
 - [ ] 深色/浅色主题切换
 - [ ] 响应式设计
 - [ ] 动画和过渡
 - [ ] 性能优化
 
-### Phase 6: 部署和测试 (1-2小时)
+### Phase 5: 部署和测试 (1-2小时)
 - [ ] 构建测试
 - [ ] 环境配置
 - [ ] 部署到 Vercel/Netlify

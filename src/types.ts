@@ -15,6 +15,7 @@ export interface Document {
   meta: DocumentMeta
   excerpt: string
   modifiedAt: Date
+  links: string[] // 本文档引用的其他文档 slug 列表
 }
 
 export interface SearchResult {
@@ -24,3 +25,11 @@ export interface SearchResult {
 }
 
 export type ViewMode = 'list' | 'grid' | 'reading'
+
+export interface Backlink {
+  slug: string
+  title: string
+  excerpt: string
+  path: string
+  modifiedAt: Date
+}

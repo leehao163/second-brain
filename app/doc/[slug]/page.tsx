@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import { MarkdownViewer } from '@/components/MarkdownViewer'
 import { DocumentCard } from '@/components/DocumentCard'
-import { getDocumentBySlug, getAllSlugs } from '@/lib/FileScanner'
+import { BacklinksPanel } from '@/components/BacklinksPanel'
+import { getDocumentBySlug, getAllSlugs, getBacklinks, scanDocuments } from '@/src/lib/FileScanner'
 import Link from 'next/link'
 import { ArrowLeft, Calendar, Tag } from 'lucide-react'
 
@@ -22,7 +23,20 @@ export default async function DocPage({ params }: PageProps) {
     notFound()
   }
 
-  const { meta, content } = document
+  const { meta, content, links } = document
+
+  // 获取反向链接文档列表
+  const allDocs = await scanDocuments()
+  const backlinkSlugs = getBacklinks(slug)
+  const backlinks = allDocs
+    .filter(doc => backlinkSlugs.includes(doc.slug))
+    .map(doc => ({
+      slug: doc.slug,
+      title: doc.meta.title,
+      excerpt: doc.excerpt,
+      path: doc.path,
+      modifiedAt: doc.modifiedAt,
+    }))
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
@@ -73,6 +87,8 @@ export default async function DocPage({ params }: PageProps) {
 
         <MarkdownViewer content={content} />
       </article>
+
+      <BacklinksPanel backlinks={backlinks} />
 
       <nav className="pt-6 border-t border-border">
         <Link
