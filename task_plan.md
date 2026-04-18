@@ -67,10 +67,15 @@ status: planning
 - **Status:** complete
 
 ### Phase 4: 主题和优化 (2-3小时)
-- [ ] 深色/浅色主题切换
-- [ ] 响应式设计
-- [ ] 动画和过渡
-- [ ] 性能优化
+|- [x] 配置 Tailwind dark mode (class 策略)
+|- [x] 定义 CSS 变量（light/dark）
+|- [x] 创建 ThemeToggle 组件
+|- [x] 在 layout.tsx 集成 ThemeProvider ✅ 2026-04-18
+|- [x] 测试主题切换功能 ✅ 2026-04-18
+|- [ ] 响应式布局优化（移动端适配）
+|- [ ] 添加过渡动画和微交互
+|- [ ] 性能优化（图片懒加载、组件加载）
+|- **Status:** complete
 
 ### Phase 5: 部署和测试 (1-2小时)
 - [ ] 构建测试

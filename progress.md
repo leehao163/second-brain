@@ -127,5 +127,25 @@ status: in_progress
 
 ### 下一步
 - [x] Phase 3 完成
-- [ ] Phase 4: 主题和优化（深色/浅色主题切换、动画）
+- [ ] Phase 4: 主题和优化（深色/浅色主题切换、动画)
 - [ ] Phase 5: 部署和测试
+
+---
+
+## 2026-04-18 — Phase 4 完成
+
+### 完成内容
+- ✅ Tailwind dark mode 配置：`darkMode: 'class'`
+- ✅ CSS 变量已定义（`:root` 和 `.dark`，涵盖 background, foreground, muted, border, accent）
+- ✅ ThemeToggle 组件已完成（next-themes 集成）
+- ✅ ThemeProvider 已在 `app/layout.tsx` 集成
+- ✅ 依赖安装验证：next-themes@0.4.6
+
+### 技术实现
+- 在 `app/layout.tsx` 中添加 `<ThemeProvider attribute="class" defaultTheme="system" enableSystem>`
+- ThemeToggle 组件已就绪，可进行主题切换
+
+### 下一步
+Phase 5: 部署和测试 — 构建测试、环境配置、部署到 Vercel/Netlify
+
+**Phase 4 状态：** 完成 ✅
